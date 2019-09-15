@@ -1,0 +1,55 @@
+#top-level{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: [start] 25vh [title] 20vh [buttonone] 20vh [buttontwo] 20vh [contentbottom] 15vh [end];
+    justify-items: center;
+    align-items: center;
+}
+
+#title{
+    font-family: 'Bangers', cursive;
+    color: white;
+    margin: 0px;
+    font-size: 10vw;
+    grid-row-start: start;
+    grid-row-end: title;
+}
+
+.styledbutton{
+    color: black;
+    background-color: white;
+    width: 40vw;
+    height: 8vh;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.buttontext{
+    margin: 0px;
+    font-family: 'Bangers', cursive;
+    font-size: 7vw;
+}
+
+#startdraw{
+    grid-row-start: buttonone;
+}
+
+#settings{
+    grid-row-start: buttontwo;
+}
+
+@media(orientation: landscape){
+    .styledbutton{
+        width: 40vh;
+        height: 8vw;
+    }
+
+    .buttontext{
+        font-size: 7vh;
+    }
+}

@@ -1,0 +1,34 @@
+#toplevel{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: [start] 2vh [contentstart] 7vh [topbarend] 91vh [end];
+    grid-template-columns: [start] 3vw [contentstart] 10vw [backbuttonend] 20vw [titlestart] 67vw [end] ;
+    justify-content: center;
+}
+
+#homescreen-button{
+    height: 10vw;
+    width: 10vw;
+    grid-column-start: contentstart;
+    grid-column-end: backbuttonend;
+    grid-row-start: contentstart;
+    grid-column-end: topbarend;
+}
+
+#homescreen-button-img{
+    height: inherit;
+    width: inherit;
+}
+
+#title{
+    font-size: 10vw;
+    grid-column-start: titlestart;
+    grid-row-start: contentstart;
+    grid-row-end: topbarend;
+}
+
+.page-text{
+    font-family: 'Bangers', cursive;
+    margin: 0px;
+}
