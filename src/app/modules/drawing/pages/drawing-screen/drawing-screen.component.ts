@@ -12,4 +12,20 @@ export class DrawingScreenComponent implements OnInit {
   ngOnInit() {
   }
 
+  clickLeft(){
+    
+  }
+
+  clickRight(){
+
+  }
+
+  clickUp(){
+
+  }
+
+  clickDown(){
+
+  }
+
 }

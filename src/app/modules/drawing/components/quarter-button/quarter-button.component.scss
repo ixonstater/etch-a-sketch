@@ -1,0 +1,14 @@
+#toplevel{
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#arrow{
+    width: 10vh;
+    height: 10vh;
+    opacity: 0.5;
+}

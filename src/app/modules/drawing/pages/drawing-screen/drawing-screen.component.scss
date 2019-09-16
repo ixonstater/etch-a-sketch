@@ -1,0 +1,7 @@
+#toplevel{
+    display: grid;
+    grid-template-rows: [start] 50vh [middle] 50vh [end];
+    grid-template-columns: [start] 50vw [middle] 50vw [end];
+    height: 100vh;
+    width: 100vw;
+}

@@ -8,6 +8,9 @@ import { SettingsScreenComponent } from './pages/settings-screen/settings-screen
   declarations: [SettingsScreenComponent],
   imports: [
     CommonModule
+  ],
+  exports:[
+    SettingsScreenComponent
   ]
 })
 export class SettingsModule { }
