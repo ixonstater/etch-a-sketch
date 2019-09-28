@@ -51,8 +51,6 @@ export class DrawingScreenComponent implements OnInit {
     this.context = this.myCanvas.nativeElement.children[0].getContext('2d')
     this.context.fillStyle = 'black'
     this.context.lineWidth = 10
-    this.context.beginPath()
-    this.context.moveTo(this.canvasWidth / 2, this.canvasHeight / 2)
   }
 
   startTouchLeft(){
