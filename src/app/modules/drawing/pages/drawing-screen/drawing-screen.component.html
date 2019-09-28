@@ -1,6 +1,27 @@
-<div id='toplevel'>
-    <quarter-button id='up' class='quarter-button' rotation='270deg' (click)='clickUp()'></quarter-button>
-    <quarter-button id='down' class='quarter-button' rotation='90deg' (click)='clickDown()'></quarter-button>
-    <quarter-button id='left' class='quarter-button' rotation='180deg' (click)='clickLeft()'></quarter-button>
-    <quarter-button id='right' class='quarter-button' rotation='0deg' (click)='clickRight()'></quarter-button>
+<div #toplevel id='toplevel'>
+    <drawing-canvas #myCanvas id='canvas'></drawing-canvas>
+    <quarter-button 
+        class='up'
+        rotation='270deg' 
+        (touchend)= 'endTouchUp()'
+        (touchstart)='startTouchUp()'>
+    </quarter-button>
+    <quarter-button 
+        class='down'
+        rotation='90deg' 
+        (touchend)= 'endTouchDown()'
+        (touchstart)='startTouchDown()'>
+    </quarter-button>
+    <quarter-button 
+        class='left'
+        rotation='180deg' 
+        (touchend)= 'endTouchLeft()'
+        (touchstart)='startTouchLeft()'>
+    </quarter-button>
+    <quarter-button 
+        class='right'
+        rotation='0deg' 
+        (touchend)= 'endTouchRight()'
+        (touchstart)='startTouchRight()'>
+    </quarter-button>
 </div>

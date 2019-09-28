@@ -5,3 +5,43 @@
     height: 100vh;
     width: 100vw;
 }
+
+.up{
+    grid-row-start: start;
+    grid-row-end: middle;
+    grid-column-start: start;
+    grid-column-end: middle;
+    z-index: 1;
+}
+
+.down{
+    grid-row-start: start;
+    grid-row-end: middle;
+    grid-column-start: middle;
+    grid-column-end: end;
+    z-index: 1;
+}
+
+.left{
+    grid-row-start: middle;
+    grid-row-end: end;
+    grid-column-start: start;
+    grid-column-end: middle;
+    z-index: 1;
+}
+
+.right{
+    grid-row-start: middle;
+    grid-row-end: end;
+    grid-column-start: middle;
+    grid-column-end: end;
+    z-index: 1;
+}
+
+#canvas{
+    grid-row-start: start;
+    grid-row-end: end;
+    grid-column-start: start;
+    grid-column-end: end;
+    z-index: 0;
+}
