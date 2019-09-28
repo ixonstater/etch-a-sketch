@@ -19,6 +19,9 @@ export class HomePageComponent implements OnInit {
   }
   
   toDrawing(){
+    var el = document.documentElement,
+    rfs = el.requestFullscreen
+    rfs.call(el)
     this.router.navigateByUrl('/drawing')
   }
 }

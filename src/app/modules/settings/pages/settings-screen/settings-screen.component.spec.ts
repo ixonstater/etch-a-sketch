@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import DataModel from '../../../../shared/data-model.service'
 import { SettingsScreenComponent } from './settings-screen.component';
 
 describe('SettingsScreenComponent', () => {

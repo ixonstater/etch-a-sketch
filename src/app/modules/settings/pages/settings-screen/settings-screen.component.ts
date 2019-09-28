@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router, Data } from '@angular/router'
+import DataModel from '../../../../shared/data-model.service'
 
 @Component({
   selector: 'app-settings-screen',
@@ -7,10 +8,14 @@ import { Router } from '@angular/router'
   styleUrls: ['./settings-screen.component.scss']
 })
 export class SettingsScreenComponent implements OnInit {
+  dataModel: DataModel
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private DataModel: DataModel) {
+    this.dataModel = DataModel
+  }
 
   ngOnInit() {
+    
   }
 
   toHome(){

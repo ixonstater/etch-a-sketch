@@ -11,8 +11,8 @@ class Drawing{
         this.cursorLocation = [50,50]
         this.heightRatio = heightRatio / 100
         this.widthRatio = widthRatio / 100
-        this.upIncrement = 0.7
-        this.downIncrement = 0.7
+        this.upIncrement = 0.5
+        this.downIncrement = 0.5
         this.leftIncrement = 0.7
         this.rightIncrement = 0.7
 

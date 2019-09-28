@@ -1,4 +1,5 @@
-import { Component, OnInit , ViewChild, ElementRef} from '@angular/core';
+import { Component, OnInit , ViewChild, ElementRef, Inject} from '@angular/core';
+import DataModel from '../../../../shared/data-model.service'
 import Drawing from './drawing'
 
 @Component({
@@ -17,9 +18,13 @@ export class DrawingScreenComponent implements OnInit {
   canvasHeight: number
   canvasWidth:  number
   drawing: Drawing
+  dataModel: DataModel
 
-  constructor() { }
-  @ViewChild('myCanvas', {read: ElementRef}) myCanvas: ElementRef
+  constructor(DataModel: DataModel) {
+    this.dataModel = DataModel
+  }
+
+  @ViewChild('myCanvas', {read: ElementRef, static: true}) myCanvas: ElementRef
   ngOnInit() {
     this.hasTouch = false
     this.up = false
@@ -38,10 +43,6 @@ export class DrawingScreenComponent implements OnInit {
 
   ngOnDestroy(){
     clearInterval(this.loopInterval)
-  }
-
-  onOrientationChange(){
-    console.log('changed')
   }
 
   getContext(){
