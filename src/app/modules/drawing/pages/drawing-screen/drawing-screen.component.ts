@@ -15,10 +15,10 @@ export class DrawingScreenComponent implements OnInit {
   right: boolean
   context: CanvasRenderingContext2D
   loopInterval: NodeJS.Timer
-  canvasHeight: number
-  canvasWidth:  number
   drawing: Drawing
   dataModel: DataModel
+  canvas: any
+  portrait: boolean
 
   constructor(DataModel: DataModel) {
     this.dataModel = DataModel
@@ -31,10 +31,26 @@ export class DrawingScreenComponent implements OnInit {
     this.down = false
     this.left = false
     this.right = false
-    this.canvasHeight = window.innerHeight * 2
-    this.canvasWidth = window.innerWidth * 2
-    this.drawing = new Drawing(this.canvasWidth, this.canvasHeight)
+    window.addEventListener('resize', this.detectOrientationChange.bind(this))
+    this.canvas = this.myCanvas.nativeElement.children[0]
     this.getContext()
+    this.drawing = new Drawing(this.canvas.width, this.canvas.height)
+    this.portrait = window.innerHeight > window.innerWidth ? true : false
+  }
+
+  detectOrientationChange(){
+    let newIsPortrait = window.innerHeight > window.innerWidth ? true : false
+    if(this.portrait != newIsPortrait){
+      this.portrait = newIsPortrait
+      this.orientationChange()
+    }
+  }
+
+  orientationChange(){
+    this.canvas.height = window.innerHeight * 2
+    this.canvas.width = window.innerWidth * 2
+    this.drawing.orientationChange(this.canvas.width, this.canvas.height, this.portrait)
+    this.setContextFlags()
   }
 
   ngAfterContentInit(){
@@ -43,12 +59,17 @@ export class DrawingScreenComponent implements OnInit {
 
   ngOnDestroy(){
     clearInterval(this.loopInterval)
+    window.removeEventListener('resize', this.orientationChange)
   }
 
   getContext(){
-    this.myCanvas.nativeElement.children[0].width = window.innerWidth * 2
-    this.myCanvas.nativeElement.children[0].height = window.innerHeight * 2
-    this.context = this.myCanvas.nativeElement.children[0].getContext('2d')
+    this.canvas.width = window.innerWidth * 2
+    this.canvas.height = window.innerHeight * 2
+    this.context = this.canvas.getContext('2d')
+    this.setContextFlags()
+  }
+
+  setContextFlags(){
     this.context.fillStyle = 'black'
     this.context.lineWidth = 10
   }
